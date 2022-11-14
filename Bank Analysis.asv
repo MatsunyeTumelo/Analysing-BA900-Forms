@@ -1,0 +1,11 @@
+Capitec =  '333107';
+Investec = '25054';
+ABSA = '34118';
+FNB = '416053';
+Standard_Bank = '416061';
+Nedbank = '416088';
+%Dates
+August = '_2022-08-01.csv';
+July =  '_2022-08-01.csv';
+%25054_2022-08-01
+readtable('25054'+'_2022-08-01.csv')
