@@ -1,0 +1,41 @@
+% Testing sorting algorithm
+ A = Banks('A','2');
+    B = Banks('B','3');
+     C = Banks('C','4');
+      
+           Array = [A B C];
+         
+          
+          for i=1: length(Array)
+              Array(i).market_share=length(Array)+i;
+          end
+          
+ for i = 1 : length(Array)
+       for j = 1 : length(Array)-i
+           if(Array(j).market_share < Array(j+1).market_share)
+               temp = Array(j);
+               Array(j) = Array(j+1);
+               Array(j+1) = temp;
+           end           
+       end
+ end
+ 
+%% Test 1: order correctly
+assert(Array(1).name =='C') %'Value of biggest market share at the top'
+%% Test 2: Middle correct
+assert(Array(2).name =='B')
+%% Test 3: Bottom correctly
+assert(Array(3).name =='A')    %'Value of smallest market share at the bottom'
+
+ 
+% Testing LDR method  
+
+      A.Item1 = [ 24 44 54]; B.Item110 = [ 12 22 9];
+          B.Item1 = [ 30 60 60]; B.Item110 = [ 15 10 3]; 
+           C.Item1 = [ 360 270 180];  C.Item110 = [ 45 90 30];
+          
+   A.loan_to_deposit = LDR(A.Item110,A.Item1);
+   
+  %% 4 Test : Dot Division done correctly
+  assert(A.loan_to_deposit(1) == 0.5);
+  assert

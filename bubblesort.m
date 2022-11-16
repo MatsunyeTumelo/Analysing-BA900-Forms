@@ -1,0 +1,16 @@
+function result = bubblesort(List)
+%               Sorting banks
+%   Sorting them in term of market in descending order
+   for i = 1 : length(List)
+       for j = 1 : length(List)-i
+           if(List(j).market_share < List(j+1).market_share)
+               temp = List(j);
+               List(j) = List(j+1);
+               List(j+1) = temp;
+           end
+       end
+   end
+   result = List;
+
+end
+
